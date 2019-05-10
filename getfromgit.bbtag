@@ -1,0 +1,3 @@
+{set;gitrequest;{jget;{request;https://api.github.com/repos/spirgiuz/bso_discord/git/trees/54ec15b123128367ee73ece7bbd180383625407a};body}}
+{set;i;0}
+{while;{length;{jget;{get;gitrequest};tree.{get;i}.path}};>;0;{jget;{get;gitrequest};tree.{get;i}.path}{newline}{increment;i}}

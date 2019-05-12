@@ -39,7 +39,7 @@
 {set;_ws2Role;575703358439161856}
 
 {set;_adminRoles;{push;[];{get;_coordRole}}}
-{set;_memberRoles;_teamMemberRole;_ws1Role;_ws2Role}
+{set;_memberRoles;{get;_teamMemberRole};{get;_ws1Role};{get;_ws2Role}}
 
 {set;_publicCategory;532288520941862912}
 

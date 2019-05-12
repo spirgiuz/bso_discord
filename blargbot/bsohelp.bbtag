@@ -6,9 +6,9 @@
 {if;{userhasrole;{get;_botDevRole}};{set;~botdevrole;1};{set;~botdevrole;0}}
 {if;{userhasrole;{get;_coordRole}};{set;~coordrole;1};{set;~coordrole;0}}
 {if;{userhasrole;{get;_memberRoles}};{set;~memberrole;1};{set;~memberrole;0}}
-{if;{userhasrole;[]};{set;~bankrole;1};{set;~bankrole;0}}
-{if;{userhasrole;{get;_allyRole}};{set;~allyrole;1};{set;~allyrole;0}}
-{if;{userhasrole;[]};{set;~wscmdrrole;1};{set;~wscmdrrole;0}}
+{set;~bankrole;0}
+{set;~allyrole;0}
+{set;~wscmdrrole;0}
 
 {set;~dmrestrictmsg;-specific commands have been DMed to you as you're in a public channel.}
 

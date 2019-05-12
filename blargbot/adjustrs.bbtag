@@ -4,9 +4,9 @@
 }
 {set;~rsN;0}
 {set;~howToUse;Proper syntax:```!adjustrs <rs#> <user> <u/d>```}
-{set;~allowedchannels;["380057255615397898"], ["379704858502103042"],["415694197723496458"],["403233028563927040"],["447983075851239426"],["380079988184973313"],["447575446738042886"], ["380506273080147970" ], ["482308841975971840"] }
+{set;~allowedchannels;["576049912718819328"], ["575745262396506128"] }
 {set;~channelid;{channelid}}
-{if;{userid};==;383227005589782528;{set;~channelid;415694197723496458}}{//;bso-rs, for testing}
+{//;if;{userid};==;341104891873329152;{set;~channelid;575745262396506128}}{//;bso-rs, for testing}}
 {if;{indexof;{get;~allowedchannels};{get;~channelid}};==;-1;{return}}
 {if;{argslength};!=;3;{get;~howToUse}{return};}
 {set;~rsN;{trim;{execcc;parsenum;{args;0}}}}

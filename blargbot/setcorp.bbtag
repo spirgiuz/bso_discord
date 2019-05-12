@@ -2,8 +2,8 @@
 - remove all [] parts in username
 }
 {suppresslookup} {//; suppresses errors from lookup system}
-{set;guestrole;369615227454488576}
-{set;allyrole;455134557532848139}
+{set;guestrole;{get;_guestRole}}
+{set;allyrole;{get;_allyRole}}
 
 {if;{argslength};<;1;
     __**Command Name**__: {commandname}    
@@ -79,8 +79,8 @@
 {set;_{get;~userid}_usernick;{usernick;{get;~userid}}} {//; me may have changed nickname. Set guild variable accordingly}
 
 {//;old code
-{set;guestrole;369615227454488576}
-{set;allyrole;455134557532848139}
+{set;guestrole;{get;_guestRole}}
+{set;allyrole;{get;_allyRole}}
 
 {if;{logic;||;{bool;<;{argslength};1};{bool;>;{argslength};2}};
     __**Command Name**__: {commandname}    

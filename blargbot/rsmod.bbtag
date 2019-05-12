@@ -8,7 +8,7 @@
 {set;_rsmodIcons;["<:VengCircle:534366041996787713>","<:BarrageCircle:534369090765062144>"]}
 {set;_rsmodIcons;["<:vengeancebig:538178415837052948>","<:barragebig:538176065131249665>"]}
 {set;_rsmods;["vengeance","barrage"]}{//; keep them lowercase}
-{if;{channelid};!=;482308841975971840;{return;false}}
+{if;{channelid};!=;{get;_debugChannel};{return;false}}
 }
 {if;{isarray;{get;_rsmods}};!=;true;{set;_rsmods;[]}{set;_rsmodIcons;[]}}
 {set;mods;{get;_rsmods}}
@@ -97,7 +97,7 @@ No RS modules defined, {if;{get;~isSU};use `!{commandname} add <mod-name> <mod-i
         {push;dbg;spliced _rsmods_{get;uid} to {get;_rsmods_{get;uid}}}
       }
   	}
-{void;{send;482308841975971840;{join;dbg;{newline}}}}
+{void;{send;{get;_debugChannel};{join;dbg;{newline}}}}
 ;
 ["add","define"];
 	{if;{userhasrole;{get;su}};!=;true;Access denied!{return}}

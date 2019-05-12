@@ -8,7 +8,7 @@
   ;
     {reactadd;{messageid};❌}
   }
-{//;  {send;488346953147482113;_count_chans {get;_count_chans}
+{//;  {send;{get;_jbgChannel};_count_chans {get;_count_chans}
 ~chanset {get;~chanset}
 ~chanid {get;~chanid}
 ~text {get;~text}

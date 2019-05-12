@@ -19,7 +19,7 @@ Sparky         | 12 (t) | RS8
 tonedeep       | 10 (t) | RS6-RS7```
 ;fields.name:Step by step guide to making bank transactions:;fields.value:
   
-`(1)` Submit your request in <#471349346395488257>. Your request **must** include rather or not you want to deposit/withdraw, as well as the tier of arts. 
+`(1)` Submit your request in <#{get;_bankingChannel}>. Your request **must** include rather or not you want to deposit/withdraw, as well as the tier of arts.
   
 `(2)` Once your request has been seen by a {rolemention;464940319587172363} Staff, you will recieve a <:Accepted:465864690988482560> reaction & will be contacted by a Banker when they are ready.
   

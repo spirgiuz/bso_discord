@@ -1,4 +1,4 @@
-{set;~allowedchans;488346953147482113;531206486961946657} {//;#jbg, #crusade}
+{set;~allowedchans;{get;_jbgChannel};531206486961946657} {//;#jbg, #crusade}
 {set;~gamerole;531207698063163412} {//;@crusade}
 
 {if;{indexof;{get;~allowedchans};{channelid}};==;-1;

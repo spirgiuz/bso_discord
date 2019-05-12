@@ -13,7 +13,7 @@ to-do: if user is in 1 Q only and no param given - assume rsNo
 	{if;{channelname;{args;3};quiet};!=;;{set;channelid;{args;3}}}
 }
 	
-{set;allowed;["415694197723496458","482308841975971840"]}
+{set;allowed;{get;_rsChannels}}
 {if;{indexof;{get;allowed};{get;channelid}};==;-1;{return}}
 
 {set;maxIn;5}{if;0{get;_rsMembers};{set;maxIn;{get;_rsMembers}}}
@@ -68,14 +68,14 @@ to-do: if user is in 1 Q only and no param given - assume rsNo
       {commit}
       {push;msgOut;{get;out_rsN}**__ ({length;{get;_rsQ{get;channelid}{get;out_rsN}}}/{get;maxIn})}
       {execcc;q;{get;out_rsN} {get;channelid} PASS}
-      {if;{get;quiet};==;true;{void;{send;482308841975971840;auto-out on `{commandname}`: removed {usernick;{get;user}} from RS{get;out_rsN}}}}
+      {if;{get;quiet};==;true;{void;{send;{get;_debugChannel};auto-out on `{commandname}`: removed {usernick;{get;user}} from RS{get;out_rsN}}}}
   }
 }}
 {if;{length;{get;msgOut}};>;0;{usermention;{get;user}} <:redxmark:448505393845370880> {if;{get;quiet};==;true;Removed from;Left} __**RS{join;{get;msgOut};, __**RS}}
 
 {//; temp vars
 {delete}
-{set;~allowed;["415694197723496458","482308841975971840"]}
+{set;~allowed;{get;_rsChannels}}
 {if;{indexof;{get;~allowed};{channelid}};==;-1;{return}}
 
 {set;~maxIn;5}{if;0{get;_rsMembers};{set;~maxIn;{get;_rsMembers}}}
@@ -141,7 +141,7 @@ to-do: if user is in 1 Q only and no param given - assume rsNo
 2018-12-31: ability to execcc for another user
 }
 {delete}
-{set;~allowed;["415694197723496458","482308841975971840"]}
+{set;~allowed;{get;_rsChannels}}
 {if;{indexof;{get;~allowed};{channelid}};==;-1;{return}}
 
 {set;~maxIn;5}{if;0{get;_rsMembers};{set;~maxIn;{get;_rsMembers}}}
@@ -202,7 +202,7 @@ to-do: if user is in 1 Q only and no param given - assume rsNo
 {set;~sdtime;5s}
 {set;~msgDelete;no}
 {set;~rsN;0}
-{set;~allowedchannels;["380057255615397898"], ["379704858502103042"],["415694197723496458"],["403233028563927040"], ["380506273080147970"],["447983075851239426"],["380079988184973313"]}
+{set;~allowedchannels;{get;_rsChannels}}
 {if;{indexof;{get;~allowedchannels};{channelid}};==;-1;{return}}
 {set;~rsN;{trim;{execcc;parsenum;{args;0}}}}
 {if;

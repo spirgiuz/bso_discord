@@ -6,7 +6,7 @@
 Displays a Loading Screen hint. Specify number for a specific hint.
 }
 
-{set;~allowedroles;368397581728088074;534858291763740673} {//; coord, mentor}
+{set;~allowedroles;{get;_coordRole};534858291763740673} {//; coord, mentor}
 
 {func;checkrole;
   {if;{userhasrole;{get;~allowedroles}};;

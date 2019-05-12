@@ -13,12 +13,12 @@
 
 {//; Perform specific actions based on channel posted in}
 {switch;{channelid};
-471349346395488257; {//;banking-requests}
+{get;_bankingChannel}; {//;banking-requests}
 ;
 457298739497795605; {//;posted-listing}
   {push;{get;_457298739497795605_messages};{messageid}}
 ;
-488346953147482113; {//;jbg}
+{get;_jbgChannel}; {//;jbg}
 {//;  {execcc;counting-judge}}
 ;
 }

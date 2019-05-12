@@ -1,11 +1,11 @@
 {//;syntax INtimers <rs#> <userid> <~thisIn> <usermention> <password>}{delete}
 {set;~warningTimer;27m}
 {set;~bootTimer;30m}
-{if;{channelid};==;482308841975971840;
+{if;{channelid};==;{get;_debugChannel};
   	{set;~warningTimer;5m}
 	{set;~bootTimer;7m}
 }
-{set;~allowed;["415694197723496458","482308841975971840"]}
+{set;~allowed;{get;_rsChannels}}
 {if;{indexof;{get;~allowed};{channelid}};==;-1;{return}}
 {set;~rsA;{get;_rsLevels}}
 {set;~maxIn;5}{if;0{get;_rsMembers};{set;~maxIn;{get;_rsMembers}}}
@@ -34,4 +34,4 @@
       	{return}
     };{get;~bootTimer}
 }
-{//;{void;{send;482308841975971840;set RS{get;~rsN} warn and boot timers for {usernick;{get;~user}}.}}}
+{//;{void;{send;{get;_debugChannel};set RS{get;~rsN} warn and boot timers for {usernick;{get;~user}}.}}}

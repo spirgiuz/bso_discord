@@ -2,7 +2,7 @@
 2018-08-28 - transferred from mee6
 }
 {set;~channel;380506273080147970}{//; #bot-petting-zoo}
-{set;~channel;482308841975971840}{//; #dbg}
+{set;~channel;{get;_debugChannel}}{//; #dbg}
 
 {set;~msg0;{usermention}, We have to many commands to fit into a single responce, please select the category of commands you are looking for bellow to see those commands.}
 

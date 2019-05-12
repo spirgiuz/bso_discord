@@ -4,7 +4,7 @@
 {//; changelog:
 2019-01-18: can specify channelid to override the default (current), used when removeing due to !afk
 }
-{set;allowedchannels;["415694197723496458","482308841975971840"]}
+{set;allowedchannels;{get;_rsChannels}}
 {set;channelid;{channelid}}
 
 {if;{indexof;{get;allowedchannels};{get;channelid}};==;-1;{return}}
@@ -36,7 +36,7 @@
   {set;prevMsgId;{get;_rsQmsgID{get;channelid}_{get;rs}}}
 {//;
 {if;{get;prevMsgId};==;0;
-  {void;{send;482308841975971840;q {argsarray} run from {commandname} by {usernick}, Q={get;q}}}
+  {void;{send;{get;_debugChannel};q {argsarray} run from {commandname} by {usernick}, Q={get;q}}}
 }
 }  
   {if;{length;{get;q}};>;0;

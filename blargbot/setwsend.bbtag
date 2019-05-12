@@ -112,7 +112,7 @@
   {set;~oppCorpArr;{split;{get;~opp};{space}}}
   {set;~oppNS;{trim;{join;{get;~oppCorpArr};}}}
   {set;~oppFW;{lower;{get;~oppCorpArr;0}}}
-  {set;~guestrole;369615227454488576} {set;~allyrole;455134557532848139}
+  {set;~guestrole;{get;_guestRole}} {set;~allyrole;{get;_allyRole}}
   {set;~arrayOfMembers;{concat;{rolemembers;{get;~guestrole};quiet};{rolemembers;{get;~allyrole};quiet}}}
   {void;{foreach;~userid;{get;~arrayOfMembers};
     {set;~usernick;{usernick;{get;~userid}}}
@@ -135,10 +135,8 @@
 {//; send msg to #ws, #WS planning, ws-tag-obj channels}
 {if;{get;~nomsg};==;1;{return};}{//; bye-bye}
   {set;~msg;**{rolename;{get;~roleid}} matched {get;~wsO}**}
-  {set;~ChannelNames;["ws","WS-planning","status-reports"]}
-  {set;~channelIDs;["375035878952927235","422043189516435474","419132566348627984"]}
-{//;  {set;~channelIDs;["419132566348627984"]}{//;status reports only}}
-{//;  {set;~channelIDs;["403233028563927040"]}{//;bot dev}}
+  {set;~ChannelNames;["queue","status-reports"]}
+  {set;~channelIDs;{push;[];{get;_wsQueueChannel};{get;_statusChannel}}}
   {for;~index;0;<;{length;{get;~channelIDs}};
   	{set;~chID;{get;~channelIDs;{get;~index}}}
   	{if;{channelid};!=;{get;~chID};

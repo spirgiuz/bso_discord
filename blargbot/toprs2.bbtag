@@ -4,7 +4,7 @@
 {set;num;10}
 {set;rsArr;{get;rsA}}
 {set;rsMembersA;[]}
-{set;~guestrole;369615227454488576}
+{set;~guestrole;{get;_guestRole}}
 {foreach;~userid;{guildmembers};{if;{userhasrole;{get;~guestrole};{get;~userid}};;{push;rsMembersA;{get;~userid}}{set;rsWeek_{get;~userid};0}}}
 {set;roleName;}
 {set;detail;0}

@@ -1,6 +1,6 @@
 {set;~userid;{userid}}
 {if;{length;{get;_{get;~userid}_usernick}};{set;~usernick;{get;_{userid}_usernick}{space}({username}#{userdiscrim})};{set;~usernick;{usernick}}}
-{set;~updatechan;411220744702394369}
+{set;~updatechan;{get;_rsLogChannel3}}
 
 {//;farewell message}
 {set;~byemsg;✌ {get;~usernick} has left the server.}

@@ -6,11 +6,11 @@
 
 {suppresslookup} {//; suppresses errors from lookup system}
 {execcc;wsinit;g}
-{set;~publicroles;369615227454488576;455134557532848139;375989926174523402}
-{set;~everyoneCategory;372174329456230403}
+{set;~publicroles;{get;_guestRole};{get;_allyRole};375989926174523402}
+{set;~everyoneCategory;{get;_publicCategory}}
 {//;{set;~ws-opponentChans;479306306981724170;410887759893626881;516987229105684500;423595847679475732}}
 {set;~ws-opponentChans;{get;_ws-chan-opp-main}}
-{set;~limitedChans;{concat;{channels;{get;~everyoneCategory}};{get;~ws-opponentChans};["439302324645658625","415694197723496458","431864662347218954","457298739497795605"]}} {//; Ally-accessible channels}
+{set;~limitedChans;{concat;{channels;{get;~everyoneCategory}};{get;~ws-opponentChans};{get;_rsChannels}}} {//; Ally-accessible channels}
 
 {function;usage;__**Usage:**__ !{commandname} [ member ]
 

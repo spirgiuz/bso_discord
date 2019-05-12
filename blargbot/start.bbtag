@@ -5,9 +5,9 @@
 2019-01-16: remove all participants in the starting queue from all other RS queues they are in
 			changed all vars to local, instead of temp
 }
-{//;{void;{send;482308841975971840;start executed with args: {argsarray}}}}
+{//;{void;{send;{get;_debugChannel};start executed with args: {argsarray}}}}
 
-{set;allowed;["415694197723496458","482308841975971840"]}
+{set;allowed;{get;_rsChannels}}
 {if;{indexof;{get;allowed};{channelid}};==;-1;{return}}
 
 {execcc;wsinit;g}
@@ -56,14 +56,14 @@
 
 {//; commented out by jordan 2019-01-15. Was causing issues.}
 {if;{get;_rs_auto_out};==;true;
-{//;  {if;{channelid};==;482308841975971840;}}
+{//;  {if;{channelid};==;{get;_debugChannel};}}
 	{set;start_rsN;{get;rsN}}	
   	{push;dbg;calling `!out all` (rsN={get;rsN}, lastQ={join;_lastRSQ{channelid}{get;rsN};,{space}})}
     {foreach;user;{get;_lastRSQ{channelid}{get;rsN}};{trim;{execcc;out;all;{get;user};PASS}}}
     {push;dbg;back (rsN={get;rsN}, lastQ={join;_lastRSQ{channelid}{get;rsN};,{space}})}
   	{set;rsN;{get;start_rsN}}
 	{push;dbg;rsN set to {get;rsN}}
-{//;	{void;{send;482308841975971840;dbg from `!start`:{newline}{join;dbg;{newline}}}}}
+{//;	{void;{send;{get;_debugChannel};dbg from `!start`:{newline}{join;dbg;{newline}}}}}
 {//;  }
 }
 {//; DMs instead of pings in #bso-rs - 3 timers + 1 dm + 1 ping (caller)
@@ -101,7 +101,7 @@ _{get;userid}_RSnotify can be 0/unset: ping only, 1: DM only; 2: ping+DM}
 {//; delete or not delete the pings?!?}
 {//;{if;{length;{get;usersTimer}};<;{get;maxTimers};{timer;{delete;{channelid};{get;startMsgId}};10s}}}
 
-{if;{channelid};==;482308841975971840;not logging stats...{return;false}}
+{if;{channelid};==;{get;_debugChannel};not logging stats...{return;false}}
 {//; Logging Purposes}
 {set;color;000000}
 {//;see if we have in the global var}
@@ -112,7 +112,7 @@ _{get;userid}_RSnotify can be 0/unset: ping only, 1: DM only; 2: ping+DM}
 	}
 }
 {set;firstLine;RS{get;rsN} ({get;queueSize}/{get;maxIn}) {time;MMM DD (HH:mm);;;US/Eastern}}
-{void;{set;_lastRSLog{channelid}{get;rsN};{send;447575446738042886;{embedbuild;
+{void;{set;_lastRSLog{channelid}{get;rsN};{send;{get;_rsLogChannel2};{embedbuild;
 color:{get;color};
 title:{get;firstLine};
 description:{foreach;element;{get;_lastRSQ{channelid}{get;rsN}};{usernick;{get;element}}{newline}}
@@ -122,7 +122,7 @@ description:{foreach;element;{get;_lastRSQ{channelid}{get;rsN}};{usernick;{get;e
 {if;{length;{get;_rsstats_IDs}};==;0;{set;_rsstats_IDs;[]}}
   {push;_rsstats_IDs;{get;_lastStart{channelid}{get;rsN}}:{get;rsN}:{get;place}}
 {void;{foreach;userid;{get;_lastRSQ{channelid}{get;rsN}};
-  	{void;{send;462485376771162123;```{get;_lastStart{channelid}{get;rsN}},RS{get;rsN},{get;queueSize},{time;MM/DD/YY HH:mm;;;US/Eastern},{usernick;{get;userid}},{username;{get;userid}},{get;userid},1,KEEP```}}
+  	{void;{send;{get;_rsLogChannel};```{get;_lastStart{channelid}{get;rsN}},RS{get;rsN},{get;queueSize},{time;MM/DD/YY HH:mm;;;US/Eastern},{usernick;{get;userid}},{username;{get;userid}},{get;userid},1,KEEP```}}
    	{if;{length;{get;_rsstats_{get;userid}_rs_time}};==;0;
           {set;_rsstats_{get;userid}_rs_time;[]}
           {set;_rsstats_{get;userid}_rs_level;[]}
@@ -144,9 +144,9 @@ description:{foreach;element;{get;_lastRSQ{channelid}{get;rsN}};{usernick;{get;e
 to-do: 
 - remove all participants in the starting queue from all other RS queues they are in
 }
-{//;{void;{send;482308841975971840;start executed with args: {argsarray}}}}
+{//;{void;{send;{get;_debugChannel};start executed with args: {argsarray}}}}
 
-{set;~allowed;["415694197723496458","482308841975971840"]}
+{set;~allowed;{get;_rsChannels}}
 {if;{indexof;{get;~allowed};{channelid}};==;-1;{return}}
 
 {execcc;wsinit;g}
@@ -279,13 +279,13 @@ _{get;~userid}_RSnotify can be 0/unset: ping only, 1: DM only; 2: ping+DM}
 	{set;~color;#ffdd00};
 }
 {//;
-{void;{send;482308841975971840;{embedbuild;color:{get;~color};title:{get;~msgHead};
+{void;{send;{get;_debugChannel};{embedbuild;color:{get;~color};title:{get;~msgHead};
 description:{join;~msgList;{newline}}{if;{get;~warnmsg};!=;;{newline}{get;~warnmsg}};
 footer.text:The queue has already started. Choose a corp and go kill some cerbs.;
 timestamp:{time;;;{usertimezone}}}}}
 }
 {set;~firstLine;RS{get;~rsN} ({get;~queueSize}/{get;~maxIn}) {time;MMM DD (HH:mm);;;US/Eastern}}
-{void;{set;_lastRSLog{channelid}{get;~rsN};{send;447575446738042886;{embedbuild;
+{void;{set;_lastRSLog{channelid}{get;~rsN};{send;{get;_rsLogChannel2};{embedbuild;
 color:{get;~color};
 title:{get;~firstLine};
 description:{foreach;~element;{get;_lastRSQ{channelid}{get;~rsN}};{usernick;{get;~element}}{newline}}
@@ -295,7 +295,7 @@ description:{foreach;~element;{get;_lastRSQ{channelid}{get;~rsN}};{usernick;{get
 {if;{length;{get;_rsstats_IDs}};==;0;{set;_rsstats_IDs;[]}}
   {push;_rsstats_IDs;{get;_lastStart{channelid}{get;~rsN}}:{get;~rsN}:{get;~place}}
 {void;{foreach;~userid;{get;_lastRSQ{channelid}{get;~rsN}};
-  	{void;{send;462485376771162123;```{get;_lastStart{channelid}{get;~rsN}},RS{get;~rsN},{get;~queueSize},{time;MM/DD/YY HH:mm;;;US/Eastern},{usernick;{get;~userid}},{username;{get;~userid}},{get;~userid},1,KEEP```}}
+  	{void;{send;{get;_rsLogChannel};```{get;_lastStart{channelid}{get;~rsN}},RS{get;~rsN},{get;~queueSize},{time;MM/DD/YY HH:mm;;;US/Eastern},{usernick;{get;~userid}},{username;{get;~userid}},{get;~userid},1,KEEP```}}
    	{if;{length;{get;_rsstats_{get;~userid}_rs_time}};==;0;
           {set;_rsstats_{get;~userid}_rs_time;[]}
           {set;_rsstats_{get;~userid}_rs_level;[]}

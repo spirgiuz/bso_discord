@@ -5,7 +5,7 @@
 2018-11-30: moved to guild corp vars (set by manually calling !bsoinit on change)
 }
 {execcc;wsinit;g}
-{set;~wsLogCh;482308841975971840}{//;#dbg for lack of any}
+{set;~wsLogCh;{get;_debugChannel}}{//;#dbg for lack of any}
 {set;~adminrole;372154093910622220}{if;{userhasrole;{get;~adminrole};{userid}};==;true;{set;~isAdmin;1};{set;~isAdmin;0}}
 {set;~nomsg;0}{//; for debugging: 1 to be quiet, 0 to send all messages}
 {set;~wstags;{concat;{get;_ws-tag};{get;_ws-tag-closed}}}
@@ -86,7 +86,7 @@
 {//; send msg to #ws, #WS planning, ws-tag-obj channels}
 {if;{get;~nomsg};==;1;{return};}{//; bye-bye}
   {set;~ChannelNames;["status-reports","ws","WS-planning"]}
-  {set;~channelIDs;["419132566348627984"]}{//;,"375035878952927235","422043189516435474"]}
+  {set;~channelIDs;{push;[];{get;_statusChannel}}}
   {for;~index;0;<;{length;{get;~channelIDs}};
   	{set;~chID;{get;~channelIDs;{get;~index}}}
   	{if;{channelid};!=;{get;~chID};

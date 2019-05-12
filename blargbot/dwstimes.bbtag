@@ -37,22 +37,22 @@ wstimes;
 {set;~wsLeadCh;{get;_ws-chan-lead}}
 {set;~vsChannels;{get;_ws-chan-opp-main}}
 
-{set;~everyoneCategory;372174329456230403}
-{set;~allyrole;455134557532848139}
+{set;~everyoneCategory;{get;_publicCategory}}
+{set;~allyrole;{get;_allyRole}}
 {set;~chId;{channelid}}
 {set;~chCat;{channelcategory}}
 {set;userid;{userid}}
 {//;
 {set;~chCat;384331980852166656}{set;~chId;382541038973222915}{//;simulate call from enf-ws}
 {set;~chCat;379606694508101642}{set;~chId;368396489455697920}{//;simulate call from members}
-{set;~chCat;372174329456230403}{set;~chId;368229482579886094}{//;simulate call from enf-opponent}
+{set;~chCat;{get;_publicCategory}}{set;~chId;{get;_loungeChannel}}{//;simulate call from enf-opponent}
 {if;{userid};==;383227005589782528;{set;userid;390220162906718208}}{//; simulate an ally}
 }
 {if;{get;~chCat};==;{get;~everyoneCategory};{set;~public;1};{set;~public;}}
 {if;{indexof;{get;~vsChannels};{get;~chId}};!=;-1;{set;~public;1}}{//; treat -vs-opponent channels as public too}
 {if;{userhasrole;{get;~allyrole};{get;userid}};{set;~public;1}}{//; treat allies as public too}
 {//;
-{set;~dbgchannel;482308841975971840}{if;{channelid};==;{get;~dbgchannel};{set;~public;1};{set;~public;}}{//;override}
+{set;~dbgchannel;{get;_debugChannel}}{if;{channelid};==;{get;~dbgchannel};{set;~public;1};{set;~public;}}{//;override}
 }
 {switch;{commandname};
 wstimes;

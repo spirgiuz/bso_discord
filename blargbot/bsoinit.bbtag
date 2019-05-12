@@ -7,6 +7,37 @@
 {set;main;["fa"]}	{//; use this as suffix for esach corp_ below }
 {set;alts;[]}
 {set;closed;[]}
+
+{set;_debugChannel;575745262396506128}
+{set;_jbgChannel;575745262396506128}
+{set;_rsChannel;576049912718819328}
+{set;_rsLogChannel;575745262396506128}
+{set;_rsLogChannel2;575745262396506128}
+{set;_rsLogChannel3;575745262396506128}
+{set;_rsLogChannel4;575745262396506128}
+{set;_loungeChannel;532289008047226882}
+{set;_afkChannel;484002041539330067}
+{set;_bankingChannel;575745262396506128}
+{set;_shameChannel;576073683840270346}
+{set;_tradeChannel;540938542054899732}
+{set;_statusChannel;575745262396506128}
+{set;_wsQueueChannel;576072833403191297}
+
+{set;_rsChannels;{push;[];{get;_rsChannel};{get;_debugChannel}}}
+{set;_coordChannels;{push;[];{get;_debugChannel}}}
+
+{set;_guestRole;577081609178578944}
+{set;_rsRole;575780568743149588}
+{set;_coordRole;484000510139957248}
+{set;_allyRole;577081609178578944}
+{set;_teamMemberRole;532285817520128030}
+
+{//;set;_adminRole;TODO}}
+{set;_adminRoles;{push;[];{get;_coordRole}}}
+
+{set;_publicCategory;532288520941862912}
+
+
 {//; general template block for corp data collected. these fields will be present in the created guild arrays}
 {set;corp_template;	{//; leave this empty, needed to initialize the arrays. all corp blocks must have the same fields, in any order}
 	corp-role,
@@ -122,7 +153,7 @@
   {push;dbg;{get;item} ({length;{get;_{get;item}}} items): {join;{get;_{get;item}};,}}
 }
 {//; send message to #dbg that guild vars have been recreated}
-{void;{send;482308841975971840;{if;{argslength};>;0;**{args;0}**:{space}}guild vars set by bsoinit on demand by {commandname}, ran by {usernick;{userid}} ({length;{get;dbg}} arrays)}}
+{void;{send;{get;_debugChannel};{if;{argslength};>;0;**{args;0}**:{space}}guild vars set by bsoinit on demand by {commandname}, ran by {usernick;{userid}} ({length;{get;dbg}} arrays)}}
 {//; export options}
 {if;{args;0};==;arrays;{file;{join;dbg;{newline}};bsoarrays.txt}}
 {if;{args;0};==;export;

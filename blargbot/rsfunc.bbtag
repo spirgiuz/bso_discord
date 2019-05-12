@@ -1,5 +1,5 @@
 {//;args: {argsarray}}
-{set;~errs;[]}{set;~msg;[]}{set;~dbgCh;482308841975971840}
+{set;~errs;[]}{set;~msg;[]}{set;~dbgCh;{get;_debugChannel}}
 {set;~sep;:}
 
 {function;inarr;{//; any of arr1 is in arr2}
@@ -298,7 +298,7 @@ RS runs {if;{get;~userid};!=;;for **{usernick;{get;~userid}}**{space};{if;{get;~
 
 {switch;{args;0};
 start;{//; !rsfunc <start> <RSqueue> <pass>}
-  {set;~ch;415694197723496458}
+  {set;~ch;{get;_rsChannel}}
   {if;{argslength};<;3;{push;~errs;not enough params ({argslength}/3)}}
   {if;{args;2};!=;{get;_func_pass};{push;~errs;invalid password}}
   {set;~rsN;{parseint;{args;1}}}
@@ -366,7 +366,7 @@ start;{//; !rsfunc <start> <RSqueue> <pass>}
 }
 ;
 showQueue;
-	{set;~ch;415694197723496458}
+	{set;~ch;{get;_rsChannel}}
  	{set;~queue;{get;_rsQ{get;~ch}{args;1}}}
 {if;{length;{get;~queue}};>;0;
 Current queue:

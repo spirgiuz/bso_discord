@@ -9,7 +9,7 @@ changelog
 	{set;wsRoles;{get;_ws-role-main}}
   	{set;corpRoles;{get;_corp-role-main}}
   	{set;oppRoles;{get;_ws-role-opp-main}}
-  	{set;allyRole;455134557532848139}
+  	{set;allyRole;{get;_allyRole}}
   	{set;allyRSIcon;<:ALLY_RS:510209779231227914>}
 	{set;wsIcons;{get;_ws-icon-main}}
   	{set;rsIcons;{get;_rs-icon-main}}
@@ -112,7 +112,7 @@ changelog
 	{set;~wsRoles;{get;_ws-role-main}}
   	{set;~corpRoles;{get;_corp-role-main}}
   	{set;~oppRoles;{get;_ws-role-opp-main}}
-  	{set;~allyRole;455134557532848139}
+  	{set;~allyRole;{get;_allyRole}}
   	{set;~wsIcon;<:star_white_ws:379292760437555200>}
   	{set;~rsIcon;<:star_red_rs:379292716154093569>}
   	{set;~allyRSIcon;<:ALLY_RS:510209779231227914>}
@@ -168,7 +168,7 @@ changelog
 {function;wsIconsUser;{//; returns a string with icon for each ws-tag the user has}
   	{set;~uid;{params;0}}
 	{set;~wsRoles;387715016222048265;387715242957864971;387715522575204352;401489230951481354;406431073296318465}
-  	{set;~allyRole;455134557532848139}
+  	{set;~allyRole;{get;_allyRole}}
   	{set;~wsIcon;<:star_white_ws:379292760437555200>}
   	{set;~rsIcon;<:star_red_rs:379292716154093569>}
   	{set;~allyIcon;<:Ally:510103292697640960>}

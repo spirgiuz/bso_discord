@@ -6,8 +6,8 @@
   __**Usage:**__ !{commandname} [ws role]
 }
 
-{set;~publicroles;369615227454488576;455134557532848139}
-{set;~everyoneCategory;372174329456230403}
+{set;~publicroles;{get;_guestRole};{get;_allyRole}}
+{set;~everyoneCategory;{get;_publicCategory}}
 {set;~ws-opponentChans;479306306981724170;410887759893626881;423596924768354304;423595847679475732}
 {set;~limitedChans;{concat;{channels;{get;~everyoneCategory}};{get;~ws-opponentChans}}}
 {set;~mainwsTags;["BSO-WS","FIN-WS","ENF-WS","DAU-WS","OBN-WS"]}

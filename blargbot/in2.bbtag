@@ -9,7 +9,7 @@
 			if the user has only one rs-tag, assume the rs# if not given as arg
 }
 {delete}
-{set;~allowed;["415694197723496458","482308841975971840","488346953147482113"]}
+{set;~allowed;{get;_rsChannels}}
 {if;{indexof;{get;~allowed};{channelid}};==;-1;{return}}
 
 {set;~autostart;true}
@@ -42,7 +42,7 @@
   {set;_rsQ{channelid}{get;~rsN}_start;{time;X}}
 }
 {if;{get;_rs{get;~rsN}lock};==;true;
-  {void;{send;482308841975971840;`{commandname} {join;{argsarray};{space}}` called by `{usernick}` while locked, pausing...}}
+  {void;{send;{get;_debugChannel};`{commandname} {join;{argsarray};{space}}` called by `{usernick}` while locked, pausing...}}
   {sleep;3s}
 }
 {set;_rs{get;~rsN}lock;true}{commit}
@@ -124,7 +124,7 @@
 {if;{get;counterIn};<;{get;~maxIn};
 	{execcc;INtimers;{get;~rsN} {get;uid} {get;~thisIn} {usermention}{get;userWSicons} PASS}
   	;
-{//;  	{void;{send;482308841975971840;not setting {get;~rsN} timers for {usernick;{get;uid}} ( {get;counterIn}/{get;~maxIn})}}}
+{//;  	{void;{send;{get;_debugChannel};not setting {get;~rsN} timers for {usernick;{get;uid}} ( {get;counterIn}/{get;~maxIn})}}}
 }
 {void;{send;{channelid};{join;{get;inmsg};{newline}}}}
 {if;{get;~start};==;false;{execcc;q;{get;~rsN}};{execcc;start;{get;~rsN}}}

@@ -12,12 +12,11 @@
 
 {suppresslookup}
 {set;~obncorprole;406418309454757899}
-{set;~rsrole;508381265657856015}
-{set;~OKroles;["369615227454488576","455134557532848139"]}{//;guest,ally}
-{//;{set;guestrole;369615227454488576}{//;BSO}
-{set;allyrole;455134557532848139}}
-{set;logchan;411220744702394369}{//;BSO}
-{set;statuschan;419132566348627984}{//;BSO}
+{set;~rsrole;{get;_rsRole}}
+{set;~OKroles;{push;[];{get;_guestRole}}}
+{set;allyrole;{get;_allyRole}}}
+{set;logchan;{get;_rsLogChannel3}}{//;BSO}
+{set;statuschan;{get;_statusChannel}}{//;BSO}
 
 {set;~howToUse;__**Command Name**__: {commandname}{newline}__**Usage**__: !{commandname} <user> <rs#>
 

@@ -10,9 +10,9 @@ Use `!help vouch` for usage information.
 }
 
 {set;~corproles;396993641480192000;396993657653428224;516981099260280853;396993660455092224;401486171932196864;406418309454757899}
-{set;~allyrole;455134557532848139}
+{set;~allyrole;{get;_allyRole}}
 {set;~retiredrole;375989926174523402}
-{set;~guestrole;369615227454488576}
+{set;~guestrole;{get;_guestRole}}
 {set;~voucherroles;{concat;{get;~corproles};{get;~allyrole};{get;~retiredrole}}}
 {set;~allyrsruns;10}
 {set;~allydayshere;7}

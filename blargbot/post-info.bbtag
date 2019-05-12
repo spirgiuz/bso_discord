@@ -1,6 +1,6 @@
 {if;{length;{args}};==;0;{set;~chan;{channelid}};{set;~chan;{channelid;{args;0}}}}
 {void;{send;{get;~chan};{embedbuild;color:#F2F2F2;image.url:https://cdn.discordapp.com/attachments/368396489455697920/492029567377080320/bsoinfo2.jpg}}
-{send;{get;~chan};{embedbuild;color:#F2F2F2;fields.name:About;fields.value:Hi everyone! This channel provides information and orientation for new members, potential members, and guests. For more information about the specific rules and rubric of the order, please consult <#406443275273371660>. If in doubt, just ask a {rolemention;368397581728088074}.
+{send;{get;~chan};{embedbuild;color:#F2F2F2;fields.name:About;fields.value:Hi everyone! This channel provides information and orientation for new members, potential members, and guests. For more information about the specific rules and rubric of the order, please consult <#406443275273371660>. If in doubt, just ask a {rolemention;{get;_coordRole}}.
 
 *<:icon_alert:379290797784432663> Everyone can view this channel*
 *<:icon_alert:379290797784432663> Only admins can write to this channel*
@@ -59,14 +59,14 @@ Type `!Requirements` for additional module requirements.
 {repeat;{space}{zws};10}<:icon_influence:379749144442699787> Top 50
 {repeat;{space}{zws};10}<:icon_relic:387820434109890561> N/A
 {repeat;{space}{zws};10}<:emoji_mad_mention:382533527666819094> {rolemention;406418309454757899} / {rolemention;406431073296318465};image.url:https://images-ext-2.discordapp.net/external/k3TkJ6tGC1ksDQF-ySg6pueMjzGEdHwJRiAuwQhBnj4/https/cdn.discordapp.com/attachments/488346953147482113/518486156510363649/requirements_2018-12-01.png?width=800&height=396}}
-{send;{get;~chan};{embedbuild;color:#F2F5A9;fields.name:What is an Ally Status?;fields.value:The role {rolemention;455134557532848139} was created on June 16, 2018: This role is for friends of the **Black Star Order**, and will grant you access to the following __member channels__:
+{send;{get;~chan};{embedbuild;color:#F2F5A9;fields.name:What is an Ally Status?;fields.value:The role {rolemention;{get;_allyRole}} was created on June 16, 2018: This role is for friends of the **Black Star Order**, and will grant you access to the following __member channels__:
 
-<#415694197723496458>: Join our 100 members in running RS with us in our Corps, You would be allowed to hop over to do a RS then return to your Corp afterwards. *(We do NOT do Public RS)*
-<#431864662347218954>: Trade arts with us, we will treat you like family & try to help you as much as we can: we ask for the same in return. 
-<#439302324645658625>: Just for those **Oops** moments in HS we come across that *hopefully* we can laugh about now.
+<#{get;_rsChannel}>: Join our 100 members in running RS with us in our Corps, You would be allowed to hop over to do a RS then return to your Corp afterwards. *(We do NOT do Public RS)*
+<#{get;_tradeChannel}>: Trade arts with us, we will treat you like family & try to help you as much as we can: we ask for the same in return.
+<#{get;_shameChannel}>: Just for those **Oops** moments in HS we come across that *hopefully* we can laugh about now.
 
-If you have been on good terms with us, and would like to be a bigger part of our community as an {rolemention;455134557532848139}, ask a {rolemention;368397581728088074} in <#368229482579886094> to become an {rolemention;455134557532848139}. }}
-{send;{get;~chan};{embedbuild;color:#A9F5A9;fields.name:How do I/we join the Order?;fields.value:Soon after joining this Discord a {rolemention;368397581728088074} should be along to greet you in <#368229482579886094> and begin talking shop right away. You can also directly apply in-game too, though please note that all formal communications are done via Discord.
+If you have been on good terms with us, and would like to be a bigger part of our community as an {rolemention;{get;_allyRole}}, ask a {rolemention;{get;_coordRole}} in <#{get;_loungeChannel}> to become an {rolemention;{get;_allyRole}}. }}
+{send;{get;~chan};{embedbuild;color:#A9F5A9;fields.name:How do I/we join the Order?;fields.value:Soon after joining this Discord a {rolemention;{get;_coordRole}} should be along to greet you in <#{get;_loungeChannel}> and begin talking shop right away. You can also directly apply in-game too, though please note that all formal communications are done via Discord.
 
 If you are a single applicant, and we have room in a corp, then joining up is usually pretty quick and easy. If you are moving as a group, or our corps are already pretty full, then it might take us a bit longer as we figure out the best compromise for everyone.
 
@@ -80,8 +80,8 @@ While we love getting *new* members, our *current* members obviously take priori
 [**HS Blog**](<http://blog.hadesstar.com/)
 [**Andreas’s Blog** *(the main game dev)*](http://andreaspapathanasis.blogspot.com.au)
 [**Facebook**](https://www.facebook.com/hadesstar/);footer.text:Click above for more information.}}
-  {send;{get;~chan};{embedbuild;color:#A9E2F3;fields.name:Who do I contact for help?;fields.value:We are lucky enough to have an awesome community of players here in the Order. Pretty much any member (i.e. anyone with a colorful name) should be able to help with any information you need. For anything else, you can mention a {rolemention;368397581728088074} and one of us will be along soon.}}
-  {send;{get;~chan};{embedbuild;color:#F5A9F2;fields.name:What do these roles / name colors mean?;fields.value:Only a few roles give permissions ({rolemention;372154093910622220}, {rolemention;368397581728088074}, and member/corp roles). All other roles are simply tags that help people identify and `@mention` the group of members they need.
+  {send;{get;~chan};{embedbuild;color:#A9E2F3;fields.name:Who do I contact for help?;fields.value:We are lucky enough to have an awesome community of players here in the Order. Pretty much any member (i.e. anyone with a colorful name) should be able to help with any information you need. For anything else, you can mention a {rolemention;{get;_coordRole}} and one of us will be along soon.}}
+  {send;{get;~chan};{embedbuild;color:#F5A9F2;fields.name:What do these roles / name colors mean?;fields.value:Only a few roles give permissions ({rolemention;372154093910622220}, {rolemention;{get;_coordRole}}, and member/corp roles). All other roles are simply tags that help people identify and `@mention` the group of members they need.
 {zws}  
 ;fields.name:Everyone in the Order has a coloured corp tag:;fields.value:
 {zws}
@@ -99,30 +99,30 @@ While we love getting *new* members, our *current* members obviously take priori
 `(3)` permissions to your corp-specific WS channels
 {zws}  
 ;fields.name:Roles tend to be corp-specific:;fields.value:Using {rolemention;396993641480192000} as an example:
-{repeat;{space}{zws};5}• {rolemention;368397581728088074}'s in {rolemention;396993641480192000} = **Black Leader**.
+{repeat;{space}{zws};5}• {rolemention;{get;_coordRole}}'s in {rolemention;396993641480192000} = **Black Leader**.
 {repeat;{space}{zws};5}• RS9 players have {rolemention;431993359629025280}.
 {repeat;{space}{zws};5}• RS8 players have {rolemention;415694472161263628}. 
 {repeat;{space}{zws};5}• Current WS players have {rolemention;387715016222048265}.
 {repeat;{space}{zws};5}• Current WS leaders have {rolemention;386676184685215744}. 
 
 ;footer.text:The leaders of each corp are then free to create whatever roles they deem necessary to help manage the corp.}}
-  {send;{get;~chan};{embedbuild;color:#F5D0A9;fields.name:What are each of these channels for? [Everyone Channels];fields.value:These channels are visible to everyone on the server, including {rolemention;369615227454488576}. They are notably the *only* ones that {rolemention;369615227454488576} can see. We encourage any casual or non-sensitive chatter to happen here to maximise its visibility.
+  {send;{get;~chan};{embedbuild;color:#F5D0A9;fields.name:What are each of these channels for? [Everyone Channels];fields.value:These channels are visible to everyone on the server, including {rolemention;{get;_guestRole}}. They are notably the *only* ones that {rolemention;{get;_guestRole}} can see. We encourage any casual or non-sensitive chatter to happen here to maximise its visibility.
   
 {repeat;{space}{zws};5}<#417424284030337026>: general information center
 {repeat;{space}{zws};5}<#372178661505368074>: announcements and events
-{repeat;{space}{zws};5}<#368229482579886094>: default channel for everyone
+{repeat;{space}{zws};5}<#{get;_loungeChannel}>: default channel for everyone
 {repeat;{space}{zws};5}<#396290663207010304>: gameplay channel for everyone
 {repeat;{space}{zws};5}<#470087486584913950>: bot spam via `!tw`, `!hsmeme`, & similar. 
 {repeat;{space}{zws};5}<#455266710077964288>: 18+ chat with no filters. (`!agree` to enter)
 {zws}
-;fields.name:What are each of these channels for? [Member + Ally 🕊 Channels];fields.value:These channels are shared between both members of the order and {rolemention;455134557532848139} of the Order.
+;fields.name:What are each of these channels for? [Member + Ally 🕊 Channels];fields.value:These channels are shared between both members of the order and {rolemention;{get;_allyRole}} of the Order.
 
 {repeat;{space}{zws};5}<#406443275273371660>: rules and guidelines everyone must follow 
 {repeat;{space}{zws};5}<#457298739497795605>: ad postings for services or trades related to Hades' Star. 
-{repeat;{space}{zws};5}<#431864662347218954>: art trading between members & {rolemention;455134557532848139}
-{repeat;{space}{zws};5}<#415694197723496458>: calling RS runs for members & {rolemention;455134557532848139}
-{repeat;{space}{zws};5}<#447575446738042886>: logs of all RS runs within BSO. 
-{repeat;{space}{zws};5}<#439302324645658625>: for those oops moments.    
+{repeat;{space}{zws};5}<#{get;_tradeChannel}>: art trading between members & {rolemention;{get;_allyRole}}
+{repeat;{space}{zws};5}<#{get;_rsChannel}>: calling RS runs for members & {rolemention;{get;_allyRole}}
+{repeat;{space}{zws};5}<#{get;_rsLogChannel2}>: logs of all RS runs within BSO.
+{repeat;{space}{zws};5}<#{get;_shameChannel}>: for those oops moments.
 {zws}    
 ;fields.name:What are each of these channels for? [Member Channels];fields.value:These channels are visible to all members of the Order. They are the shared areas for everyone in the Order, regardless of your corp. The eponymous <#368396489455697920> is the default channel of this category, and others will be stood up as needed. We encourage any order chatter that is not specific to a corp to happen here.
 
@@ -132,7 +132,7 @@ While we love getting *new* members, our *current* members obviously take priori
 {repeat;{space}{zws};5}<#379767586629615616>: gameplay channel for members
 {repeat;{space}{zws};5}<#375035878952927235>: common channel for general WS chat
 {repeat;{space}{zws};5}<#380597945751568384>: gameplay numbers and white papers
-{repeat;{space}{zws};5}<#419132566348627984>: report game progress and upcoming vacations
+{repeat;{space}{zws};5}<#{get;_statusChannel}>: report game progress and upcoming vacations
 {zws}
 ;fields.name:What are each of these channels for? [White-Star Channels];fields.value:The corp-specific WS channels are grouped by their corp name (e.g. **black-**) and are only visible to the members in that Corp's WS. These channels will appear and disappear for you based on where you do WS that week.
 
@@ -142,7 +142,7 @@ The **leaders** of each corp are then free to create whatever channels they deem
 
 {repeat;{space}{zws};5}<#465480741535350784>: news related to the Bank.
 {repeat;{space}{zws};5}<#465482302072291340>: all bank conversations take place here.
-{repeat;{space}{zws};5}<#471349346395488257>: all bank transactions take place here.  
+{repeat;{space}{zws};5}<#{get;_bankingChannel}>: all bank transactions take place here.
 
 In just two weeks of the opening of the bank, we managed to stockpile 593 Artifacts. As of **Jan 12th, 2019** we hold the following arts.;image.url:https://cdn.discordapp.com/attachments/532961275618131968/533691036824764419/Screenshot_20190112-115634_Sheets.jpg;footer.text:This is the bottom of #info, please scroll to the top for the content.}}
 }

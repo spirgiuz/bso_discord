@@ -7,7 +7,7 @@
 
 {suppresslookup} {//; suppresses errors from lookup system}
 {set;~userid;{userid}}
-{set;~afkchannel;501593412634542100}
+{set;~afkchannel;{get;_afkChannel}}
 
 {if;{argslength};<;1;
   __**Command Name:**__ {commandname}
@@ -16,11 +16,11 @@
 To indicate you have returned from AFK, type !back. For more information, type `!help afk`{return}
 }
 
-{set;~publicroles;369615227454488576;455134557532848139}
-{set;~rsrole;508381265657856015}
-{set;~everyoneCategory;372174329456230403}
+{set;~publicroles;{get;_guestRole};{get;_allyRole}}
+{set;~rsrole;{get;_rsRole}}
+{set;~everyoneCategory;{get;_publicCategory}}
 {set;~ws-opponentChans;{get;_ws-chan-opp-main}}
-{set;~limitedChans;{concat;{channels;{get;~everyoneCategory}};{get;~ws-opponentChans};["439302324645658625","415694197723496458","431864662347218954","457298739497795605"]}} {//; Ally-accessible channels}
+{set;~limitedChans;{concat;{channels;{get;~everyoneCategory}};{get;~ws-opponentChans};{get;_rsChannels}}} {//; Ally-accessible channels}
 {set;~mainwsTags;{get;_ws-tags-main}}
 {set;~altwsTags;{get;_ws-tags-alts}}
 {set;~wsrolemain;{get;_ws-role-main}}
@@ -49,7 +49,7 @@ To indicate you have returned from AFK, type !back. For more information, type `
   }
 ;
   {if;{get;~duration};>;172800;
-    Unable to set AFK duration beyond 48h.{newline}{if;{userhasrole;{get;~publicroles}};;Please report any extended absences in <#419132566348627984>.}
+    Unable to set AFK duration beyond 48h.{newline}{if;{userhasrole;{get;~publicroles}};;Please report any extended absences in <#{get;_statusChannel}>.}
     {return}
   }
 }
@@ -94,7 +94,7 @@ To indicate you have returned from AFK, type !back. For more information, type `
 {if;0{get;~memberpublic};==;0;{usernick} is set to AFK for{get;~time_in_words}.}
 {//; RS auto-out: remove from all queues in #bso-rs}
 {if;{get;_rs_auto_out};==;true;
-	{set;bsors;415694197723496458}
+	{set;bsors;{get;_rsChannel}}
 	{set;~outMsg;{trim;{execcc;out;all {get;~userid} PASS {get;bsors}}}}
 	{if;{length;{get;~outMsg}};>;0;{void;{send;{get;bsors};{get;~outMsg}}}}
 	{if;{length;{get;~outMsg}};>;0;They have also been removed from all RS queues in #{channelname;{get;bsors}}.}

@@ -1,5 +1,5 @@
 {//}{delete}
-{set;~allowedchannels;["380057255615397898"], ["379704858502103042"],["415694197723496458"],["403233028563927040"],["447983075851239426"],["380079988184973313"]}
+{set;~allowedchannels;{get;_rsChannels}}
 {if;{indexof;{get;~allowedchannels};{channelid}};==;-1;{return}}
 {set;~rsN;0}
 {set;~rsN;{trim;{execcc;parsenum;{args;0}}}}

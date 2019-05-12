@@ -52,7 +52,7 @@ __Examples:__
       }
     }
   }
-{if;{get;~isDebug};==;1;{send;482308841975971840;{join;~dbg;{newline}}}}
+{if;{get;~isDebug};==;1;{send;{get;_debugChannel};{join;~dbg;{newline}}}}
 }
 }
 {function;updateWSboard;{//; args: 0=wsIndex}
@@ -64,7 +64,7 @@ __Examples:__
         {set;_{get;corpchan}_status_msg;{send;{get;corpchan};{execcc;wstimes;{get;~ws-tags;{get;index}}}}}
         {set;_{get;corpchan}_status_msg_time;{time}}
     }
-{if;{get;~isDebug};==;1;{send;482308841975971840;{join;~dbg;{newline}}}}
+{if;{get;~isDebug};==;1;{send;{get;_debugChannel};{join;~dbg;{newline}}}}
 }
 
 {set;~now;{time;X}}
@@ -88,7 +88,7 @@ __Examples:__
 {if;{get;~userid};!=;;
   	{if;{get;~ship};!=;;
   		{set;_WSShip{get;~userid}_{get;~wsTag}_{get;~ship};{get;~time}{space}{get;~descr}}
-{void;{send;482308841975971840;set `_WSShip{get;~userid}_{get;~wsTag}_{get;~ship}` to `{get;_WSShip{get;~userid}_{get;~wsTag}_{get;~ship}}`}}
+{void;{send;{get;_debugChannel};set `_WSShip{get;~userid}_{get;~wsTag}_{get;~ship}` to `{get;_WSShip{get;~userid}_{get;~wsTag}_{get;~ship}}`}}
       	{if;{get;~timerSec};>;0;
           {timer;{if;{abs;{math;-;{time;X};{math;-;{get;_WSShip{get;~userid}_{get;~wsTag}_{get;~ship}};900}}};<;60;{dm;{get;~userid};Hey! It is about time to jump your {get;~shipname} in: 15 minutes to go, gear up!}};{get;~timerSec}s}
         }

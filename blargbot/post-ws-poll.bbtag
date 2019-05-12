@@ -8,7 +8,7 @@
 {set;~daurole;401486171932196864}
 {set;~obnrole;406418309454757899}
 {set;~notifyroles;{concat;{get;~bsorole};{get;~finrole};{get;~pohrole};{get;~daurole};{get;~obnrole}}}
-{set;~status-reports-chan;419132566348627984}
+{set;~status-reports-chan;{get;_statusChannel}}
 {set;~pollurl;https://docs.google.com/forms/d/e/1FAIpQLSdfhZ2cAMtkqK6MS4GKPOKeW2pd_gH5aoh2rTQrmi2IjOjjQQ/viewform}
 
 {fallback;-1}

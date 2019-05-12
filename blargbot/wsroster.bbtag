@@ -50,7 +50,7 @@
 {get;~msg}
 {join;~wsm;{newline}}
 {if;{length;{get;~err}};>;0;
-**ERROR**: {join;{get;~err};{newline}};{set;~channel;482308841975971840}{//;dbg} 	{//;{set;~channel;414110809359122432}{//;order-news}}
+**ERROR**: {join;{get;~err};{newline}};{set;~channel;{get;_debugChannel}}{//;dbg} 	{//;{set;~channel;414110809359122432}{//;order-news}}
 **ALL GOOD**, message ready to be posted.
 {//;  **ALL GOOD**, message sent to {channelname;{get;~channel}}
   {void;{send;{get;~channel};{get;~msg}{join;~wsm;{newline}}}}

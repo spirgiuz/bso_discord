@@ -15,7 +15,7 @@
 {set;~price;100}
 {set;~crediticon;<:BSOCoin:513017421494222888>}
 {set;~overdraftallowance;100}
-{set;~coordrole;368397581728088074}
+{set;~coordrole;{get;_coordRole}}
 {set;~bankrole;464940319587172363}
 {set;~approverrole;{concat;{get;~coordrole};{get;~bankrole}}}
 {set;~approvalnotifychan;513519296450789376} {//; #lotto-admin}
@@ -308,7 +308,7 @@ Use `!lotto buy ticket` to purchase your ticket or `!lotto help` for more inform
         ;
         ["results"];
           {if;0{get;_lotto_{get;~lastweek}_winner};==;0;
-            {send;488346953147482113;{usermention;289098595628744704}, no winner was declared!}
+            {send;{get;_jbgChannel};{usermention;289098595628744704}, no winner was declared!}
             {return}  
           }
           {if;0{get;_lotto_results_sent};==;0;

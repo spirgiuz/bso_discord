@@ -19,10 +19,9 @@ Coordinators Only:
 Note: For <user> names with spaces, coords must encase them in quotes.
 }
 {suppresslookup}
-{set;~coordrole;368397581728088074}
-{set;~everyoneCategory;372174329456230403}
-{set;~vsChannels;["479306306981724170","410887759893626881","423596924768354304","423595847679475732","503674249496625164"]}
-{set;~pubchans;{concat;{get;~vsChannels};["415694197723496458","439302324645658625"]}} {//; bso-rs and walk-of-shame}
+{set;~coordrole;{get;_coordRole}}
+{set;~everyoneCategory;{get;_publicCategory}}
+{set;~pubchans;{get;_rsChannel}} {//; bso-rs and walk-of-shame}
 
 {set;~chId;{channelid}}
 {set;~chCat;{channelcategory}}

@@ -31,7 +31,7 @@ __Valid options and their settings are:__
 Valid options are: `24h`, `notify`, `rspings`, `autoback`. Type `!help afkset` for full documentation.
 }
 
-{set;~publicroles;369615227454488576;455134557532848139}
+{set;~publicroles;{get;_guestRole};{get;_allyRole}}
 {set;~adminroles;483769413531861002;372154093910622220;447472629146714166}
 {//; Set default settings}
 {if;0{length;{get;_{userid}_afk_24h}};;{set;_{userid}_afk_24h;0}} {//;12h by default}
@@ -88,7 +88,7 @@ Valid options are: `24h`, `notify`, `rspings`, `autoback`. Type `!help afkset` f
 :x: Allies and Guests cannot set their notification location.
       ;
         {set;_{userid}_afk_notify;chan}
-:ballot_box_with_check: AFK notifications will occur in <#501593412634542100>.
+:ballot_box_with_check: AFK notifications will occur in <#{get;_afkChannel}>.
       }
       ;
       ["none","no","0","off"];

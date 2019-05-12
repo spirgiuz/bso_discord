@@ -15,7 +15,7 @@ Example:
 {set;~wsChannels;{get;_ws-chan-gen}}
 {//; added bot dev channel to match POH-ws for testing}
 {set;~devIndex;0}
-{push;~wsTags;{get;~wsTags;{get;~devIndex}}}{push;~corpIDs;{get;~corpIDs;{get;~devIndex}}}{push;~wsChannels;482308841975971840}
+{push;~wsTags;{get;~wsTags;{get;~devIndex}}}{push;~corpIDs;{get;~corpIDs;{get;~devIndex}}}{push;~wsChannels;{get;_debugChannel}}
 {//;{if;{channelid};==;{get;~wsChannels;7};cid={get;~corpIDs} i={indexof;{get;~wsChannels};{channelid}}}}
 {//; if called form -ws channel - list ship info for members}
 {set;~indByChannel;{indexof;{get;~wsChannels};{channelid}}}

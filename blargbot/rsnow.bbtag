@@ -1,7 +1,7 @@
 {//; RSnowpingRS <RS#> [message] - pings the members that used to run at that time of day with the message if given
 }
 {delete}
-{set;~ch;415694197723496458}{set;~allowed;415694197723496458;482308841975971840}
+{set;~ch;{get;_rsChannel}}{set;~allowed;{get;_rsChannel};{get;_debugChannel}}
 {set;~autodel;30}
 {set;~howToUse;Usage: !rsnow <RS#> [message] - shows members that run RS# at current time-of-day. If [message] is given, pings those members with the message.}
 {set;~output;}

@@ -9,7 +9,7 @@
 
 {set;~bets;{get;_bets}}
 {set;dbg;[]}
-{if;{channelid};==;482308841975971840;{push;~bets;test}{set;isdbg;1};{set;isdbg;0}}
+{if;{channelid};==;{get;_debugChannel};{push;~bets;test}{set;isdbg;1};{set;isdbg;0}}
 
 {set;~suff;}
 {if;{argslength};>;0;

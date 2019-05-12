@@ -6,9 +6,9 @@
 		    - list all removed, not removed (error), kept and given roles
 			- log to _<userid>_role_history (array of <roleid>:<add|remove>:<time;X>)
 }
-{set;guestrole;369615227454488576}
-{set;allyrole;455134557532848139}
-{set;logchan;411220744702394369}
+{set;guestrole;{get;_guestRole}}
+{set;allyrole;{get;_allyRole}}
+{set;logchan;{get;_rsLogChannel3}}
 {set;rid_crusadewinner;528983096956157962}
 {set;rid_lottowinner;531196166831079444}
 

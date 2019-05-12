@@ -9,7 +9,7 @@
 {set;num;10}
 {set;rsArr;{get;rsA}}
 {set;rsMembersA;[]}
-{set;~guestrole;369615227454488576}
+{set;~guestrole;{get;_guestRole}}
 {foreach;~userid;{guildmembers};{if;{userhasrole;{get;~guestrole};{get;~userid}};;{push;rsMembersA;{get;~userid}}}}
 {set;roleName;}
 {set;detail;0}
@@ -102,7 +102,7 @@
 {set;num;10}
 {set;rsArr;{get;rsA}}
 {set;rsMembersA;[]}
-{set;~guestrole;369615227454488576}
+{set;~guestrole;{get;_guestRole}}
 {foreach;~userid;{guildmembers};{if;{userhasrole;{get;~guestrole};{get;~userid}};;{push;rsMembersA;{get;~userid}}}}
 {set;roleName;}
 {set;detail;0}

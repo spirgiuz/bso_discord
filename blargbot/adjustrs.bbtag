@@ -52,8 +52,8 @@
   		{push;_rsstats_{get;~userid}_rs_time;{get;_lastStart{get;~channelid}{get;~rsN}}}
   		{push;_rsstats_{get;~userid}_rs_level;{get;~rsN}}
   		{push;_rsstats_{get;~userid}_rs_corp;-}
-        {void;{send;447575446738042886;```{usernick;{get;~userid}} was added the last RS{get;~rsN} by {usernick;{userid}}```}}
-        {void;{send;462485376771162123;```{get;_lastStart{get;~channelid}{get;~rsN}},RS{get;~rsN},{get;~queueSize},{time;MM/DD/YY HH:mm;;;US/Eastern},{usernick;{get;~userid}},{username;{get;~userid}},{get;~userid},1,KEEP```}}
+        {void;{send;{get;_rsLogChannel2};```{usernick;{get;~userid}} was added the last RS{get;~rsN} by {usernick;{userid}}```}}
+        {void;{send;{get;_rsLogChannel};```{get;_lastStart{get;~channelid}{get;~rsN}},RS{get;~rsN},{get;~queueSize},{time;MM/DD/YY HH:mm;;;US/Eastern},{usernick;{get;~userid}},{username;{get;~userid}},{get;~userid},1,KEEP```}}
         {usernick;{get;~userid}} recorded as being in the last __**RS{get;~rsN}**__ by {usernick;{userid}}{return}
 }
 {//;noshows}
@@ -78,7 +78,7 @@
   			{splice;_rsstats_{get;~userid}_rs_level;{get;~rsStatsIndex};1}
   			{splice;_rsstats_{get;~userid}_rs_corp;{get;~rsStatsIndex};1}}
   		}
-        {void;{send;447575446738042886;```{usernick;{get;~userid}} was deleted from the last RS{get;~rsN} by {usernick;{userid}}```}}
-        {void;{send;462485376771162123;```{get;_lastStart{get;~channelid}{get;~rsN}},RS{get;~rsN},{get;~queueSize},{time;MM/DD/YY HH:mm;;;US/Eastern},{usernick;{get;~userid}},{username;{get;~userid}},{get;~userid},-1,KEEP```}}
+        {void;{send;{get;_rsLogChannel2};```{usernick;{get;~userid}} was deleted from the last RS{get;~rsN} by {usernick;{userid}}```}}
+        {void;{send;{get;_rsLogChannel};```{get;_lastStart{get;~channelid}{get;~rsN}},RS{get;~rsN},{get;~queueSize},{time;MM/DD/YY HH:mm;;;US/Eastern},{usernick;{get;~userid}},{username;{get;~userid}},{get;~userid},-1,KEEP```}}
         {usernick;{get;~userid}} recorded as not being in the last __**RS{get;~rsN}**__ by {usernick;{userid}}
 }

@@ -7,9 +7,9 @@
 {if;0{length;{get;_{userid}_afk_autoback}};{set;~threshold;{get;_{userid}_afk_autoback}};{set;~threshold;0.50}} 
 
 {set;_interval_send_count;0}
-{set;~rsrole;508381265657856015}
-{set;~afkchannel;501593412634542100}
-{set;~publicroles;369615227454488576;455134557532848139}
+{set;~rsrole;{get;_rsRole}}
+{set;~afkchannel;{get;_afkChannel}}
+{set;~publicroles;{get;_guestRole};{get;_allyRole}}
 {execcc;wsinit;g}
 {set;~mainwsTags;{get;_ws-tags-main}}
 {set;~altwsTags;{get;_ws-tags-alts}}

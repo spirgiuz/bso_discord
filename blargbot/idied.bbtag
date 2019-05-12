@@ -15,7 +15,7 @@ Usage:
 {set;~resetroles;447472629146714166;372154093910622220} {//; bot-dev, admin}
 {set;~corproles;396993641480192000;396993657653428224;516981099260280853;396993660455092224;401486171932196864;406418309454757899}
 {if;{userhasrole;{get;~corproles}};{set;~isbso;1};{set;~isbso;0}}
-{if;{userhasrole;455134557532848139};{set;~isally;1};{set;~isally;0}}
+{if;{userhasrole;{get;_allyRole}};{set;~isally;1};{set;~isally;0}}
 
 {if;{logic;&&;{bool;{get;~isbso};==;0};{bool;{get;~isally};==;0}};:x: Only members and allies may view and add deaths to the tally.{return}}
 

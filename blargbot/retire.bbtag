@@ -3,7 +3,7 @@
 2018-09-02: prevent removing activity rank roles
 }
 {set;guestrole;375989926174523402}
-{set;logchan;411220744702394369}
+{set;logchan;{get;_rsLogChannel3}}
 
 {set;~rolesList;{get;_activityRolesList}}{//; as coped from !roles}
 {set;~actRoles;[]}
@@ -72,7 +72,7 @@
 }
 
 {set;guestrole;375989926174523402}
-{set;logchan;411220744702394369}
+{set;logchan;{get;_rsLogChannel3}}
 
 {set;~actRoles;[]}
 {void;{foreach;~tier;[1,2,3,4,5,6];

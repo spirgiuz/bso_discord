@@ -3,6 +3,8 @@ import requests
 import json
 import re
 import urllib
+import datetime
+import sys
 
 client_id="170237838334492682" #seems to be the blarg.xyz client id
 serverid=""
@@ -41,7 +43,7 @@ def save(tagname,content,session,serverid):
 	headersblarg={"Content-Type":"application/x-www-form-urlencoded"}
 	payload3="tagName={}&newname=&action={}&destination={}&fontsize=20&content={}".format(tagname,"save",serverid,urllib.parse.quote(content)).encode("utf-8")
 	r=session.post('https://blargbot.xyz/tags/editor',data=payload3,headers=headersblarg)
-	print("save response {}".format(r.status_code))
+	print("save response {}".format(r.status_code)
 
 def load(tagname,session,serverid):
 	global blargauthdone
@@ -59,22 +61,27 @@ def load(tagname,session,serverid):
 def gitsave(giturl,session,serverid,tagname=[]):
 	r=requests.get(giturl)
 	gitjson=json.loads(r.text)
+	savedtags=[]
 	for tag in gitjson:
 		if "bbtag" in tag["name"]:
 			name=tag["name"].split(".")[0]
 			if len(tagname)==0 or name in tagname:
+				savedtags.append(name)
 				print("saving {}".format(name))
+				sys.stdout.flush()
 				r2=requests.get(tag["download_url"])
 				save(name,r2.text,session,serverid)
-
+	now = datetime.datetime.now()
+	save("lastsave","{}: {}".format(now.isoformat(),str(savedtags)),session,serverid)
 def backup(list,session,serverid):
 	for item in list:
 		load(item,session,serverid)
 
 
-
+blargauth()
+blargauthdone=True
 #load("getfromgit",session,serverid)
 #save("getfromgit2","test321",session,serverid)
-gitsave("https://api.github.com/repos/spirgiuz/bso_discord/contents/blargbot",session,serverid,["adjustrs"])
+gitsave("https://api.github.com/repos/spirgiuz/bso_discord/contents/blargbot",session,serverid)
 #backup(["afk","jordan","joined"],session,serverid)
 

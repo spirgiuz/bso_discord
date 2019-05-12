@@ -16,6 +16,7 @@
 {set;_rsLogChannel3;575745262396506128}
 {set;_rsLogChannel4;575745262396506128}
 {set;_loungeChannel;532289008047226882}
+{set;_welcomeChannel;575749957257003008}
 {set;_afkChannel;484002041539330067}
 {set;_bankingChannel;575745262396506128}
 {set;_shameChannel;576073683840270346}
@@ -25,15 +26,20 @@
 
 {set;_rsChannels;{push;[];{get;_rsChannel};{get;_debugChannel}}}
 {set;_coordChannels;{push;[];{get;_debugChannel}}}
+{set;_publicChannels;{push;[];{get;_loungeChannel};{get;_shameChannel};{get;_tradeChannel};{get;_welcomeChannel}}}
 
 {set;_guestRole;577081609178578944}
 {set;_rsRole;575780568743149588}
 {set;_coordRole;484000510139957248}
 {set;_allyRole;577081609178578944}
 {set;_teamMemberRole;532285817520128030}
+{set;_adminRole;575758070861529088}
+{set;_botDevRole;575758070861529088}
+{set;_ws1Role;502082567777026048}
+{set;_ws2Role;575703358439161856}
 
-{//;set;_adminRole;TODO}}
 {set;_adminRoles;{push;[];{get;_coordRole}}}
+{set;_memberRoles;_teamMemberRole;_ws1Role;_ws2Role}
 
 {set;_publicCategory;532288520941862912}
 
@@ -58,7 +64,7 @@
 	active-to
 }
 {//; start of corp info section - this is the place to update values or create new corps }
-{set;corp_bso;
+{set;corp_fa;
 	corp-role:532285817520128030,
 	corp-nick:BLACK,
   	corp-size:29,

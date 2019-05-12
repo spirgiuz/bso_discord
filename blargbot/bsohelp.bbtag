@@ -1,14 +1,14 @@
-{set;~vsChannels;["479306306981724170","410887759893626881","423596924768354304","423595847679475732"]}{//; consider public}
+{set;~vsChannels;{get;_publicChannels}}{//; consider public}
 {if;{indexof;{get;_coordChannels};{channelid}};>;-1;{set;~coordchannel;1};{set;~coordchannel;0}}
 {if;{category};==;{get;_publicCategory};{set;~memberchannel;0};{set;~memberchannel;1}}
 {if;{indexof;{get;~vsChannels};{channelid}};>;-1;{set;~public;1}}{//; treat -vs-opponent channels as public too}
-{if;{userhasrole;372154093910622220};{set;~adminrole;1};{set;~adminrole;0}}
-{if;{userhasrole;447472629146714166};{set;~botdevrole;1};{set;~botdevrole;0}}
+{if;{userhasrole;{get;_adminRole}};{set;~adminrole;1};{set;~adminrole;0}}
+{if;{userhasrole;{get;_botDevRole}};{set;~botdevrole;1};{set;~botdevrole;0}}
 {if;{userhasrole;{get;_coordRole}};{set;~coordrole;1};{set;~coordrole;0}}
-{if;{userhasrole;["396993641480192000","396993657653428224","396993660455092224","406418309454757899","401486171932196864"]};{set;~memberrole;1};{set;~memberrole;0}}
-{if;{userhasrole;464940319587172363};{set;~bankrole;1};{set;~bankrole;0}}
+{if;{userhasrole;{get;_memberRoles}};{set;~memberrole;1};{set;~memberrole;0}}
+{if;{userhasrole;[]};{set;~bankrole;1};{set;~bankrole;0}}
 {if;{userhasrole;{get;_allyRole}};{set;~allyrole;1};{set;~allyrole;0}}
-{if;{userhasrole;["386676184685215744","389605769508552706","397371000171266048","401489117676044290","406433117004365834"]};{set;~wscmdrrole;1};{set;~wscmdrrole;0}}
+{if;{userhasrole;[]};{set;~wscmdrrole;1};{set;~wscmdrrole;0}}
 
 {set;~dmrestrictmsg;-specific commands have been DMed to you as you're in a public channel.}
 

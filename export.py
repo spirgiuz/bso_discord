@@ -43,7 +43,7 @@ def save(tagname,content,session,serverid):
 	headersblarg={"Content-Type":"application/x-www-form-urlencoded"}
 	payload3="tagName={}&newname=&action={}&destination={}&fontsize=20&content={}".format(tagname,"save",serverid,urllib.parse.quote(content)).encode("utf-8")
 	r=session.post('https://blargbot.xyz/tags/editor',data=payload3,headers=headersblarg)
-	print("save response {}".format(r.status_code)
+	print("save response {}".format(r.status_code))
 
 def load(tagname,session,serverid):
 	global blargauthdone
@@ -82,6 +82,6 @@ blargauth()
 blargauthdone=True
 #load("getfromgit",session,serverid)
 #save("getfromgit2","test321",session,serverid)
-gitsave("https://api.github.com/repos/spirgiuz/bso_discord/contents/blargbot",session,serverid)
+gitsave("https://api.github.com/repos/spirgiuz/bso_discord/contents/blargbot",session,serverid,["bsoinit"])
 #backup(["afk","jordan","joined"],session,serverid)
 
